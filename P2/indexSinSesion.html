@@ -1,80 +1,100 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title>PI - Pisos & Inmuebles</title>
-</head>
+<html lang = "es">
+    <head>
+        <meta charset="utf-8">
+        <title>PI - Pisos & Inmuebles</title>
+    </head>
 
-<body>
-    <header>
-        <h3>PI - Pisos & Inmuebles</h3>
-        <div id = btnsNavbar>
-            <a href="buscar.html">Buscar</a>
-            <button id = "btnIniSes">Iniciar sesión</button>
-            <button id = "btnReg">Registarse</button>    
-        </div>
-    </header>
+    <body>
+        <header>
+            <h1>PI - Pisos & Inmuebles</h1>
+            <div id = btnsNavbar>
+                <a href="busqueda.html">Buscar</a>
+                <button id = "btnIniSes">Iniciar sesión</button>
+                <button id = "btnReg">Registarse</button>    
+            </div>
+        </header>
 
-    <main>
-        <form id = "buscar">
-            <h2>Buscar vivienda</h2>
-            <input type="text" placeholder="Ciudad, zona, código postal">
-            <button type ="submit">Buscar</button>
-        </form>
-        <form id = "iniSes">
-            <h2>Iniciar sesión</h2>
+        <main>
+            <form id = "buscar">
+                <h2>Buscar vivienda</h2>
+                <input type="text" placeholder="Ciudad, zona, código postal">
+                <button type ="submit">Buscar</button>
+            </form>
+            <form id = "iniSes" action = "indexSesionIni.html">
+                <h2>Iniciar sesión</h2>
 
-            <p>Nombre de usuario</p>
-            <input type = "text">
+                <label for = "nomUsu">Nombre de usuario</p>
+                <input type = "text" id = "numUsu">
 
-            <p>Contraseña</p>
-            <input type = "password">
+                <label for = "pwd">Contraseña</p>
+                <input type = "password" id = "pwd">
 
-            <button type="submit">Entrar</button>
-        </form>
+                <button type="submit">Entrar</button>
+            </form>
 
-        <section id = "anuncios">
-            <h2>Últimos anuncios publicados</h2>
-            
-            <a href = "noAcceso.html">
-                <article>
-                    <h3>Anuncio 1</h3>
-                    <img src = "foto1.jpg" alt = "Anuncio 1">
-                    <p>Descripción</p>
-                </article>
-            </a>
+            <section id = "anuncios">
+                <h2>Últimos anuncios publicados</h2>
+                
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "foto1.jpg" alt = "Anuncio 1">
+                        <h3>Anuncio 1</h3>
+                        <p>XX / XX / XXXX</p>
+                        <p>Ciudad</p>
+                        <p>País</p>
+                        <p>999 €</p>
+                    </article>
+                </a>
 
-            <a href = "noAcceso.html">
-                <article>
-                    <h3>Anuncio 2</h3>
-                    <img src = "foto2.jpg" alt = "Anuncio 2">
-                    <p>Descripción</p>
-                </article>
-            </a>
-
-
-            <a href = "noAcceso.html">
-                <article>
-                    <h3>Anuncio 3</h3>
-                    <img src = "foto3.jpg" alt = "Anuncio 3">
-                    <p>Descripción</p>
-                </article>
-            </a>
-            <a href = "noAcceso.html">
-                <article>
-                    <h3>Anuncio 4</h3>
-                    <img src = "foto4.jpg" alt = "Anuncio 4">
-                    <p>Descripción</p>
-                </article>
-            </a>
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "foto2.jpg" alt = "Anuncio 2">
+                        <h3>Anuncio 2</h3>
+                        <p>XX / XX / XXXX</p>
+                        <p>Ciudad</p>
+                        <p>País</p>
+                        <p>999 €</p>
+                    </article>
+                </a>
 
             <a href = "noAcceso.html">
-                <article>
-                    <h3>Anuncio 5</h3>
-                    <img src = "foto5.jpg" alt = "Anuncio 5">
-                    <p>Descripción</p>
-                </article>
-            </a>
-        </section>
-    </main>
+                    <article>
+                        <img src = "foto3.jpg" alt = "Anuncio 3">
+                        <h3>Anuncio 3</h3>
+                        <p>XX / XX / XXXX</p>
+                        <p>Ciudad</p>
+                        <p>País</p>
+                        <p>999 €</p>
+                    </article>
+                </a>
 
-</body>
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "foto4.jpg" alt = "Anuncio 4">
+                        <h3>Anuncio 4</h3>
+                        <p>XX / XX / XXXX</p>
+                        <p>Ciudad</p>
+                        <p>País</p>
+                        <p>999 €</p>
+                    </article>
+                </a>
+
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "foto5.jpg" alt = "Anuncio 5">
+                        <h3>Anuncio 5</h3>
+                        <p>XX / XX / XXXX</p>
+                        <p>Ciudad</p>
+                        <p>País</p>
+                        <p>999 €</p>
+                    </article>
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 PI - Pisos & Inmuebles </p>
+        </footer>
+    </body>
+</html>

@@ -1,42 +1,66 @@
 <!DOCTYPE html>
+<html lang="es">
     <head>
         <title>Buscador</title>
         <meta charset="utf-8">
     </head>
 
     <body>
-        <form>
-            <h2>Buscar vivienda</h2>
+        <header>
+            <h1>PI - Pisos & Inmuebles</h1>
+            <ul id = "navbar">
+                <li><a href = "error.html">Mi perfil</a></li>
+                <li>Publicar anuncio</li>
+                <li><a href = "busqueda.html">Buscar</a></li>
+            </ul>
+            <a href = "indexSinSesion.html">Cerrar sesión</a>
+        </header>
+        <main>
+            <form>
+                <h2>Buscar vivienda</h2>
 
-            <p>Tipo de anuncio</p>
-            <select>
-                <option>Venta</option>
-                <option>Alquiler</option>
-            </select>
-            
-            <p>Tipo de vivienda</p>
-            <select>
-                <option>Obra nueva</option>
-                <option>Vivienda</option>
-                <option>Oficina</option>
-                <option>Local</option>
-                <option>Garaje</option>
-            </select>
+                <label for = "anuncio">Tipo de anuncio</label>
+                <select id = "anuncio">
+                    <option>Venta</option>
+                    <option>Alquiler</option>
+                </select>
+                
+                <label for = "vivienda">Tipo de vivienda</label>
+                <select id = "vivienda">
+                    <option>Obra nueva</option>
+                    <option>Vivienda</option>
+                    <option>Oficina</option>
+                    <option>Local</option>
+                    <option>Garaje</option>
+                </select>
 
-            <p>Ciudad</p>
-            <input type="text" placeholder="Alicante">
+                <label for = "ciudad">Ciudad</label>
+                <input type="text" id = "ciudad" placeholder="Alicante">
 
-            <p>País</p>
-            <select>
-                <option>España</option>
-                <option>Moldavia</option>
-                <option>Alemania</option>
-                <option>Yemen</option>
-                <option>Francia</option>
-            </select>
+                <label for = "pais">País</label>
+                <select id = "pais">
+                    <option>España</option>
+                    <option>Moldavia</option>
+                    <option>Alemania</option>
+                    <option>Yemen</option>
+                    <option>Francia</option>
+                </select>
 
-            <p>Fecha de publicación</p>
-            <input type="date">
-        </form>
-    
+                <label for = "fecha">Fecha de publicación</label>
+                <input type = "date" id = "fecha">
+
+                <div id = filtroPrecio>
+                    <label for="desde">Desde</p>
+                    <input type="number" id = "desde">
+                    <label for = "hasta">hasta</label>
+                    <input type="number" id = "hasta">
+                </div>
+
+                <button type="submit">Buscar</button>
+            </form>
+        </main>
+        <footer>
+            <p>© 2026 PI - Pisos & Inmuebles </p>
+        </footer>
     </body>
+</html>
