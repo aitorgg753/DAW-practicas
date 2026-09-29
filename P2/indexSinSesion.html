@@ -7,16 +7,17 @@
 
     <body>
         <header>
+            <img src="Logo.svg" alt="Logo" width="100">
             <h1>PI - Pisos & Inmuebles</h1>
             <div id = btnsNavbar>
-                <a href="busqueda.html">Buscar</a>
-                <button id = "btnIniSes">Iniciar sesión</button>
-                <button id = "btnReg">Registarse</button>    
+                <a href="busquedaSinSes.html">Buscar</a>
+                <a id = "btnIniSes" href ="error.html">Iniciar sesión</a>
+                <a id = "btnReg" href="registro.html">Registarse</a>    
             </div>
         </header>
 
         <main>
-            <form id = "buscar">
+            <form id = "buscar" action="listado.html">
                 <h2>Buscar vivienda</h2>
                 <input type="text" placeholder="Ciudad, zona, código postal">
                 <button type ="submit">Buscar</button>
