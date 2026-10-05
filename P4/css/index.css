@@ -1,37 +1,3 @@
-:root {
-    --article: #877dfa;
-    --subtitulo: #4438c2;
-}
-
-
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    padding: 10px;
-    
-    border: 3px solid blue;
-    nav {
-        ul {  
-            display: flex;
-            flex-direction: row;        
-            gap: 30px;
-            text-align: center;
-            list-style: none;
-            
-            li {
-                a {
-                    text-decoration: none;
-                    font-size:large;
-                }
-            }
-        }
-    }
-}
-
 #imgTit {
     display: flex;
     flex-direction: row;
@@ -47,13 +13,28 @@ header {
     gap: 5px;
 
     button {
+        background-color: var(--color-btn-bg);
+        color: var(--color-btn-text);
+        border-radius: 5px;
+        font-family: var(--font-family);
+        font-size: 20px;
+        font-weight: bold;
+        width: 100px;
+        height: 40px;
         margin-top: 0;
     }
 }
 
 main {
+    background-color: var(--fondo);
     h2 {
         text-align: center;
+        margin: 0;
+        padding: 30px;
+
+        font-family: var(--fuente-titulo);
+        color: var(--titulo);
+        font-size: 30px;
     }
     form {
         display: flex;
@@ -64,10 +45,23 @@ main {
         label{
             text-align: left;
             padding: 5px;
+            font-family: var(--font-family);
+            font-size: 20px;
+        }
+
+        input {
+            width: 400px;
+            height: 40px;
+
+            font-size: 20px;
+            font-family: var(--font-family);
+            border-radius: 5px;
+            border: 5px solid var(--borde);
         }
 
         button {
             margin-top: 10px;
+
         }
     }
 
@@ -77,7 +71,8 @@ main {
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
         justify-content: center;
-        gap: 20px;  
+        gap: 20px;
+        padding: 20px;
 
         h2 {
             grid-column: 1 / -1;
@@ -93,15 +88,16 @@ main {
                 text-align: left;
                 padding: 20px;
 
-                background-color: var(--article);
+                background-color: var(--tarjeta);
                 border-radius: 10px;
 
-                color: white;
+                color: var(--texto);
+                font-family: var(--font-family);
                 
 
                 img {
                     border-radius: 10px;
-                    border: 3px solid white;
+                    border: 5px solid var(--borde);
                 }
                 h3 {
                     text-align: center;
@@ -120,4 +116,25 @@ main {
 
 .subtitulo {
     color: var(--subtitulo)
+}
+
+#btnEntrar {
+    background-color: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+}
+
+footer {
+    background-color: #d8d1c5;
+    padding: 20px;
+    margin: 0;
+    p {
+        text-align: center;
+        font-family: var(--font-family);
+    }
 }
