@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <meta charset="utf-8">
+        <title>PI - Pisos & Inmuebles</title>
+        <link rel = "stylesheet" href = "estilos.css">
+    </head>
+
+    <body>
+        <header>
+            <div id = imgTit>
+                <img src="img/Logo.svg" alt="Logo" width="100">
+                <h1>PI - Pisos & Inmuebles</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href = "indexSesionIni.html">Inicio</a></li>
+                    <li><a href="busqueda.html">Buscar</a></li>
+                    <li><a id = "btnIniSes" href = "error.html">Iniciar sesión</a></li>
+                    <li><a href="registro.html">Registarse</a>    
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form id = "buscar" action="listado.html">
+                <h2>Buscar vivienda</h2>
+                <input type="text" placeholder="Ciudad, zona, código postal">
+                <button type ="submit">Buscar</button>
+            </form>
+            <form id = "iniSes" action = "indexSesionIni.html">
+                <h2>Iniciar sesión</h2>
+
+                <label for = "nomUsu">Nombre de usuario</p>
+                <input type = "text" id = "numUsu">
+
+                <label for = "pwd">Contraseña</p>
+                <input type = "password" id = "pwd">
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <section id = "anuncios">
+                <h2>Últimos anuncios publicados</h2>
+                
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "img/foto1.jpg" alt = "Anuncio 1" style = "width: 400px; height: 300px;">
+                        <h3>Piso en Alicante</h3>
+                        <p>20 / 09 / 2025</p>
+                        <p>Alicante</p>
+                        <p>España</p>
+                        <p>225000 €</p>
+                    </article>
+                </a>
+
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "img/foto2.jpg" alt = "Anuncio 2" style = "width: 400px; height: 300px;">
+                        <h3>Apartamento en Valladolid</h3>
+                        <p>16 / 07 / 2026</p>
+                        <p>Valladolid</p>
+                        <p>España</p>
+                        <p>600 € al mes</p>
+                    </article>
+                </a>
+
+            <a href = "noAcceso.html">
+                    <article>
+                        <img src = "img/foto4.jpg" alt = "Anuncio 3" style = "width: 400px; height: 300px;">
+                        <h3>Pisito en Madrid centro</h3>
+                        <p>19 / 06 / 2025</p>
+                        <p>Madrid</p>
+                        <p>España</p>
+                        <p>2000 € al mes</p>
+                    </article>
+                </a>
+
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "img/foto3.jpg" alt = "Anuncio 4" style = "width: 400px; height: 300px;">
+                        <h3>Piso en Albacete</h3>
+                        <p>12 / 10 / 2023</p>
+                        <p>Albacete</p>
+                        <p>España</p>
+                        <p>234300 €</p>
+                    </article>
+                </a>
+
+                <a href = "noAcceso.html">
+                    <article>
+                        <img src = "img/foto5.jpg" alt = "Anuncio 5" style = "width: 400px; height: 300px;">
+                        <h3>Apartamento en Alcorcón</h3>
+                        <p>27 / 03 / 2024</p>
+                        <p>Alcorcón</p>
+                        <p>España</p>
+                        <p>310000 €</p>
+                    </article>
+                </a>
+            </section>
+        </main>
+        </main>
+
+        <footer>
+            <p>© 2026 PI - Pisos & Inmuebles </p>
+        </footer>
+    </body>
+</html>

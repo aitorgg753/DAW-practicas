@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "estilos.css"></script>
+    <title>Solicitar folleto publicitario - PI Pisos e Inmuebles</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/Logo.svg" alt="Logo" width="100">
+        <h1>PI - Pisos & Inmuebles</h1>
+        <ul id = "navbar">
+            <li><a href = "indexSesionIni.html">Inicio</a></li>
+            <li><a href = "menu-usuario.html">Mi perfil</a></li>
+            <li><a href="error.html">Publicar anuncio</a></li>
+            <li><a href = "busqueda.html">Buscar</a></li>
+            <li><a href = "index.html">Cerrar sesión</a></li>
+        </ul>    
+    </header>
+
+    <main>
+        <section>
+            <h2>Solicitud de impresión de folleto publicitario</h2>
+            <p>Mediante esta opción puedes solicitar la impresión y el envío postal de uno de tus anuncios a todo color, toda resolución.</p>
+            <p>Los campos marcados con un asterisco (<strong>*</strong>) son obligatorios.</p>
+
+            <table>
+                <caption>Tarifas de impresión del folleto publicitario</caption>
+                <tr>
+                    <th scope="col">Concepto</th>
+                    <th scope="col">Tarifa</th>
+                </tr>
+                <tr>
+                    <th scope="row">Coste procesamiento y envío</th>
+                    <td>10 €</td>
+                </tr>
+                <tr>
+                    <th scope="row">Menos de 5 páginas</th>
+                    <td>2 € por página</td>
+                </tr>
+                <tr>
+                    <th scope="row">Entre 5 y 10 páginas</th>
+                    <td>1,8 € por página</td>
+                </tr>
+                <tr>
+                    <th scope="row">Más de 10 páginas</th>
+                    <td>1,6 € por página</td>
+                </tr>
+                <tr>
+                    <th scope="row">Blanco y negro</th>
+                    <td>0 €</td>
+                </tr>
+                <tr>
+                    <th scope="row">Color</th>
+                    <td>0,5 € por foto</td>
+                </tr>
+                <tr>
+                    <th scope="row">Resolución &le; 300 dpi</th>
+                    <td>0 € por foto</td>
+                </tr>
+                <tr>
+                    <th scope="row">Resolución &gt; 300 dpi</th>
+                    <td>0,2 € por foto</td>
+                </tr>
+            </table>
+
+            <h3>Formulario de solicitud</h3>
+            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu folleto publicitario.</p>
+
+            <form action="respuesta-folleto.html" method="get">
+
+                <!-- Texto adicional -->
+                <p>
+                    <label for="texto_adicional">Texto adicional:</label><br>
+                    <textarea id="texto_adicional" name="texto_adicional" maxlength="4000" rows="4" cols="50"
+                        placeholder="información adicional a la que ya tiene el propio anuncio"></textarea>
+                </p>
+
+                <!-- Nombre -->
+                <p>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="200" placeholder="su nombre" required>
+                    <span>(*)</span>
+                </p>
+
+                <!-- Email -->
+                <p>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" maxlength="200" placeholder="tu e-mail" required>
+                    <span>(*)</span>
+                </p>
+
+                <!-- Dirección -->
+                <p>
+                    <label for="calle">Dirección:</label>
+                    <input type="text" id="calle" name="calle" placeholder="Calle" required>
+                    <input type="text" id="numero" name="numero" placeholder="Número" required>
+                    <input type="text" id="cp" name="cp" pattern="[0-9]{5}" maxlength="5" placeholder="CP"
+                        title="5 dígitos, por ejemplo 03001" required>
+                    <label for="localidad">
+                        <select id="localidad" name="localidad" required>
+                            <option value="">Localidad</option>
+                            <option value="Alicante">Alicante</option>
+                            <option value="Valencia">Valencia</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                        </select>
+                    </label>
+                    <label for="provincia">
+                        <select id="provincia" name="provincia" required>
+                            <option value="">Provincia</option>
+                            <option value="Alicante">Alicante</option>
+                            <option value="Valencia">Valencia</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                        </select>
+                    </label>
+                    <span>(*)</span>
+                </p>
+
+                <!-- Teléfono -->
+                <p>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="### ## ## ##">
+                </p>
+
+                <!-- Color de portada -->
+                <p>
+                    <label for="color_portada">Color de la portada:</label>
+                    <input type="color" id="color_portada" name="color_portada" value="#000000">
+                    <span>(*)</span> <br>
+                </p>
+
+                <!-- Número de copias -->
+                <p>
+                    <label for="copias">Número de copias:</label>
+                    <input type="number" id="copias" name="copias" min="1" max="99" value="1" required>
+                    <span>(*)</span>
+                </p>
+
+                <!-- Resolución -->
+                <p>
+                    <label for="resolucion">Resolución de impresión:</label>
+                    <input type="range" id="resolucion" name="resolucion" min="150" max="900" step="150"
+                        value="150" oninput="salida_resolucion.value = resolucion.value + ' dpi'">
+                    <output id="salida_resolucion" for="resolucion">150 dpi</output>
+                </p>
+
+                <!-- Anuncio -->
+                <p>
+                    <label for="anuncio">Anuncio:</label>
+                    <select id="anuncio" name="anuncio" required>
+                        <option value="">mis anuncios</option>
+                        <option value="piso-centro">Piso luminoso en el centro</option>
+                        <option value="casa-afueras">Casa con jardín en las afueras</option>
+                    </select>
+                    <span>(*)</span>
+                </p>
+
+                <!-- Fecha de recepción -->
+                <p>
+                    <label for="fecha_recepcion">Fecha recepción:</label>
+                    <input type="date" id="fecha_recepcion" name="fecha_recepcion">
+                    <small>Fecha aproximada de recepción, no se puede garantizar su cumplimiento.</small>
+                </p>
+
+                <!-- Impresión a color -->
+                <fieldset>
+                    <legend>¿Impresión a color?</legend>
+                    <input type="radio" id="color_si" name="impresion_color" value="color" checked>
+                    <label for="color_si">Color</label>
+                    <input type="radio" id="color_no" name="impresion_color" value="bn">
+                    <label for="color_no">Blanco y negro</label>
+                </fieldset>
+
+                <!-- Impresión del precio -->
+                <fieldset>
+                    <legend>¿Impresión del precio?</legend>
+                    <input type="radio" id="precio_si" name="impresion_precio" value="si" checked>
+                    <label for="precio_si">Sí</label>
+                    <input type="radio" id="precio_no" name="impresion_precio" value="no">
+                    <label for="precio_no">No</label>
+                </fieldset>
+
+                <p>
+                    <button type="submit">¡Solicitar!</button>
+                    <button type="reset">Borrar formulario</button>
+                </p>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>
