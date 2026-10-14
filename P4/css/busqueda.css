@@ -18,6 +18,7 @@ form {
 
 input[type="date"], input[type="text"], #anuncio, #vivienda, #pais{
     width: 60%;
+    
 }
 
 input[type="number"] {

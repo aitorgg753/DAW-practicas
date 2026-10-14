@@ -4,18 +4,6 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-
-    button {
-        background-color: var(--color-btn-bg);
-        color: var(--color-btn-text);
-        border-radius: 5px;
-        font-family: var(--font-family);
-        font-size: 20px;
-        font-weight: bold;
-        width: 100px;
-        height: 40px;
-        margin-top: 0;
-    }
 }
 
 main {
@@ -24,9 +12,6 @@ main {
         text-align: center;
         margin: 0;
         padding: 30px;
-
-        font-family: var(--fuente-titulo);
-        color: var(--titulo);
         font-size: 30px;
     }
     form {
@@ -38,7 +23,6 @@ main {
         label{
             text-align: left;
             padding: 5px;
-            font-family: var(--font-family);
             font-size: 20px;
         }
 
@@ -47,7 +31,7 @@ main {
             height: 40px;
 
             font-size: 20px;
-            font-family: var(--font-family);
+            font-family: var(--fuente);
         }
 
         button {
@@ -80,7 +64,7 @@ main {
                 padding: 20px;
 
                 color: var(--texto);
-                font-family: var(--font-family);
+                font-family: var(--fuente);
                 
 
                 img {
@@ -102,27 +86,65 @@ main {
     }
 }
 
-.subtitulo {
-    color: var(--subtitulo)
-}
 
 #btnEntrar {
     background-color: var(--color-btn-bg);
     color: var(--color-btn-text);
     border-radius: 5px;
-    font-family: var(--font-family);
+    font-family: var(--fuente);
     font-size: 20px;
     font-weight: bold;
     width: 100px;
     height: 40px;
 }
 
-footer {
-    background-color: #d8d1c5;
-    padding: 20px;
-    margin: 0;
-    p {
-        text-align: center;
-        font-family: var(--font-family);
+#formBusqueda {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    button {
+        font-size: large;
+        margin-top: 0;   
+    }
+
+    input {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1405px) {
+    
+    main {
+        section {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 934px) {
+    
+    main {
+        section {
+        grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        section {
+            h2 {
+                padding: 10px;
+            }
+        }
+    }
+
+    #formBusqueda {
+        input {
+            width: 350px;
+        }
     }
 }

@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>PI - Pisos & Inmuebles</title>
-        <link rel = "stylesheet" href = "css/estilos.css">
+        <link rel = "stylesheet" href = "css/global.css">
+        <link rel = "stylesheet" href = "css/index.css">
     </head>
 
     <body>
@@ -25,8 +26,8 @@
 
         <main>
             <h2>Buscar vivienda</h2>
-            <form id = "buscar" action="listado.html">
-                <input type="text" placeholder="Ciudad, zona, código postal">
+            <form action="listado.html" id = "formBusqueda">
+                <input type="text" placeholder="Ciudad, zona, código postal" class="borde">
                 <button type ="submit">Buscar</button>
             </form>
 
@@ -34,7 +35,7 @@
                 <h2>Últimos anuncios publicados</h2>
                 
                 <a href = "anuncio.html">
-                    <article>
+                    <article class="tarjeta">
                         <img src = "img/foto1.jpg" alt = "Anuncio 1" style = "width: 400px; height: 300px;">
                         <h3>Piso en Alicante</h3>
                         <p>20 / 09 / 2025</p>
@@ -45,7 +46,7 @@
                 </a>
 
                 <a href = "anuncio.html">
-                    <article>
+                    <article class="tarjeta">
                         <img src = "img/foto2.jpg" alt = "Anuncio 2" style = "width: 400px; height: 300px;">
                         <h3>Apartamento en Valladolid</h3>
                         <p>16 / 07 / 2026</p>
@@ -56,7 +57,7 @@
                 </a>
 
             <a href = "anuncio.html">
-                    <article>
+                    <article class="tarjeta">
                         <img src = "img/foto3.jpg" alt = "Anuncio 3" style = "width: 400px; height: 300px;">
                         <h3>Pisito en Madrid centro</h3>
                         <p>19 / 06 / 2025</p>
@@ -67,7 +68,7 @@
                 </a>
 
                 <a href = "anuncio.html">
-                    <article>
+                    <article class="tarjeta">
                         <img src = "img/foto4.jpg" alt = "Anuncio 4" style = "width: 400px; height: 300px;">
                         <h3>Piso en Albacete</h3>
                         <p>12 / 10 / 2023</p>
@@ -78,7 +79,7 @@
                 </a>
 
                 <a href = "anuncio.html">
-                    <article>
+                    <article class="tarjeta">
                         <img src = "img/foto5.jpg" alt = "Anuncio 5" style = "width: 400px; height: 300px;">
                         <h3>Apartamento en Alcorcón</h3>
                         <p>27 / 03 / 2024</p>
@@ -87,10 +88,21 @@
                         <p>310000 €</p>
                     </article>
                 </a>
+
+                <a href = "anuncio.html">
+                    <article class="tarjeta">
+                        <img src = "img/foto6.jpg" alt = "Anuncio 6" style = "width: 400px; height: 300px;">
+                        <h3>Apartamento en La Vega Bja</h3>
+                        <p>27 / 03 / 2023</p>
+                        <p>La Vega Baja</p>
+                        <p>España</p>
+                        <p>220000 €</p>
+                    </article>
+                </a>
             </section>
         </main>
         <footer>
-            <p>© 2026 PI - Pisos & Inmuebles </p>
+            <p>© 2026 PI - Pisos & Inmuebles</p>
         </footer>
     </body>
 </html>
