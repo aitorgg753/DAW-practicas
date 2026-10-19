@@ -1,0 +1,85 @@
+@page {
+    size: A4;
+    margin: 2cm;
+}
+
+body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.5;
+}
+
+nav, #iniSes, #formBusqueda, button, main > a[href="mensaje.html"] {
+    display: none !important;
+}
+
+header {
+    border-bottom: 2pt solid #000000;
+    padding: 0 0 10pt 0;
+    margin-bottom: 15pt;
+}
+
+main, main section, .tarjeta {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 0 15pt 0 !important;
+    color: #000000 !important;
+}
+
+h1, h2, h3, p, li, th, td {
+    color: #000000 !important;
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    orphans: 3;
+    widows: 3;
+}
+
+h1 { font-size: 20pt; }
+h2 { font-size: 16pt; page-break-after: avoid; }
+h3 { font-size: 14pt; page-break-after: avoid; }
+
+article.tarjeta, img, table, tr {
+    page-break-inside: avoid;
+}
+
+main img {
+    max-width: 8cm !important;
+    height: auto !important;
+    border: 1pt solid #000000 !important;
+}
+
+a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+main a::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15pt 0;
+}
+
+th, td {
+    border: 1pt solid #000000;
+    padding: 6pt;
+    text-align: left;
+}
+
+footer {
+    background: transparent !important;
+    border-top: 1pt solid #000000;
+    margin-top: 20pt;
+    padding-top: 10pt;
+    font-size: 10pt;
+}
