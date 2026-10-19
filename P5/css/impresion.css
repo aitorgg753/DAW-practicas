@@ -15,7 +15,7 @@ body {
     }
 }
 
-nav, #iniSes, #formBusqueda, button, main > a[href="mensaje.html"] {
+nav, #iniSes, #formBusqueda, button, main > a[href="mensaje.html"], #subBusqueda {
     display: none !important;
 }
 
@@ -55,8 +55,10 @@ article.tarjeta, img, table, tr {
     page-break-inside: avoid;
 }
 
-input[type="text"] {
+input[type="text"], input[type = "email"], input[type = "number"], input[type = "color"], input[type = "date"], input[type = "tel"], select, fieldset, textarea {
     border: 2px solid black !important;
+    border-radius: 0px !important;
+    background-color: #FFFFFF !important;
 }
 
 main img {
@@ -65,22 +67,19 @@ main img {
     border: 1pt solid #000000 !important;
 }
 
-a {
-    color: #000000 !important;
-    text-decoration: underline !important;
-}
-
 table {
     width: 100%;
     border-collapse: collapse !important; 
-    border: 1px solid black !important;
+    border: 2px solid black !important;
     margin: 15pt 0;
+    background-color: #FFFFFF;
 }
 
 th, td {
-    border: 1pt solid #000000;
+    border:2px solid #000000 !important;
     padding: 6pt;
     text-align: left;
+    background-color: #FFFFFF !important;
 }
 
 footer {
@@ -89,4 +88,71 @@ footer {
     margin-top: 20px;
     padding-top: 10x;
     font-size: 10px;
+}
+
+.tarjeta, a {
+    display: block !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 20pt !important;
+}
+
+.tarjeta {
+    background-color: lightgray !important;
+    text-align: center;
+    border-radius: 0px;
+    padding: 10px !important;
+    width: 600px !important;
+    text-decoration: none !important;
+
+}
+
+.tarjeta img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 10x !important;
+
+    border-radius: 0px;
+    border: 2px solid black !important;
+}
+
+#anuncios {
+    display: block !important;
+
+    h2 {
+        page-break-before: avoid !important;
+    }
+}
+
+#anuncioPlaceholder {
+    padding: 10px !important;
+    background-color: lightgray !important;
+    h2, p {
+        text-align: center !important;
+    }
+    img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-radius: 0px;
+        border: 2px solid black !important;
+    }
+}
+
+#resBusqueda {
+    article {
+        border: 2px solid black;
+        background-color: #FFFFFF;
+        border-radius: 0px;
+
+        img {
+            border: 2px solid black;
+            border-radius: 0px;
+        }
+
+        p {
+            text-decoration: none !important;
+            font-size: 12px !important;
+        }
+    }
 }
