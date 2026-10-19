@@ -113,6 +113,11 @@ button {
 footer {
     text-align: center !important;
     background-color: #ececec;
+
+    a {
+        font-weight: bold;
+        color: #222222;
+    }
 }
 .tarjeta {
     background-color: var(--color-superficie);
