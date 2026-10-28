@@ -1,0 +1,169 @@
+/* -------- Solicitar folleto publicitario -------- */
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+main section {
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 680px;
+}
+
+main section h2 {
+    margin-top: 0;
+}
+
+main section p {
+    color: var(--color-texto-suave);
+    font-size: 0.95rem;
+    margin-top: 0;
+}
+
+/* Tabla de tarifas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+table caption {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 8px 12px;
+    border: 1px solid var(--color-borde);
+    text-align: left;
+}
+
+table thead th,
+table tr:first-child th {
+    background-color: var(--color-fondo);
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--color-fondo);
+}
+
+/* Formulario */
+main section form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+main section form p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--color-texto);
+}
+
+main section form label {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+main section form input[type="text"],
+main section form input[type="email"],
+main section form input[type="tel"],
+main section form input[type="date"],
+main section form input[type="number"],
+main section form textarea,
+main section form select {
+    padding: 8px 10px;
+    border-radius: var(--radio);
+    border: 2px solid var(--color-borde-input);
+    font-family: var(--fuente);
+    font-size: 1rem;
+    background-color: var(--color-fondo);
+    transition: border-color var(--transicion);
+    box-sizing: border-box;
+}
+
+main section form input:focus,
+main section form textarea:focus,
+main section form select:focus {
+    border-color: var(--color-texto);
+    outline: none;
+}
+
+main section form fieldset {
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 12px 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+main section form fieldset legend {
+    font-weight: 500;
+    padding: 0 6px;
+}
+
+main section form small {
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+}
+
+/* Botones */
+main section form p:last-child {
+    flex-direction: row;
+    gap: 12px;
+}
+
+main section form button {
+    padding: 10px 20px;
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity var(--transicion);
+}
+
+main section form button:hover {
+    opacity: 0.85;
+}
+
+main section form button[type="reset"] {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 2px solid var(--color-borde);
+}
+
+#btnCostes {
+    background-color: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    border: 2px solid none;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 560px) {
+    main section {
+        padding: 20px 14px;
+    }
+}

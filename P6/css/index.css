@@ -1,0 +1,150 @@
+#buscar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+main {
+    background-color: var(--fondo);
+    h2 {
+        text-align: center;
+        margin: 0;
+        padding: 30px;
+        font-size: 30px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        label{
+            text-align: left;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        input {
+            width: 400px;
+            height: 40px;
+
+            font-size: 20px;
+            font-family: var(--fuente);
+        }
+
+        button {
+            margin-top: 10px;
+
+        }
+    }
+
+    section {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+
+        h2 {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            article {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: left;
+                padding: 20px;
+
+                color: var(--texto);
+                font-family: var(--fuente);
+                
+
+                img {
+                    border-radius: 10px;
+                    border: 5px solid var(--borde);
+                }
+                h3 {
+                    text-align: center;
+                }
+
+                p {
+                    align-self: flex-start;
+                    margin: 0;
+                    margin-left: 30px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+#btnEntrar {
+    background-color: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    border-radius: 5px;
+    font-family: var(--fuente);
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+}
+
+#formBusqueda {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    button {
+        font-size: large;
+        margin-top: 0;   
+    }
+
+    input {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1405px) {
+    
+    main {
+        section {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 934px) {
+    
+    main {
+        section {
+        grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        section {
+            h2 {
+                padding: 10px;
+            }
+        }
+    }
+
+    #formBusqueda {
+        input {
+            width: 350px;
+        }
+    }
+}

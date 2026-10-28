@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaración de Accesibilidad - PI Pisos &amp; Inmuebles</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/anuncio.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/predeterminado.css" title="Estilo predeterminado" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="css/noche.css" title="Modo noche" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="css/contraste.css" title="Alto contraste" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="css/grande.css" title="Texto grande" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="css/contraste-grande.css" title="Alto contraste y texto grande" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/impresion.css" media="print" />
+</head>
+<body>
+    <header>
+        <div id="imgTit">
+            <img src="img/Logo.svg" alt="Logo de PI Pisos e Inmuebles" width="100">
+            <h1>PI - Pisos &amp; Inmuebles</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Declaración de Accesibilidad</h2>
+            <h3>1. Etiquetado semántico</h3>
+            <p>Todas las páginas han sido estructuradas empleando elementos semánticos de HTML5 (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;footer&gt;</code>), garantizando un orden de lectura lógico y lineal incluso si se desactivan las hojas de estilo.</p>
+
+            <h3>2. Texto alternativo en imágenes</h3>
+            <p>Todas las imágenes que transmiten información relevante cuentan con el atributo <code>alt</code> descriptivo para que puedan ser interpretadas por lectores de pantalla.</p>
+
+            <h3>3. Uso correcto de los colores y el contraste</h3>
+            <p>No se utiliza exclusivamente el color para transmitir información. Además, se han verificado las relaciones de contraste entre texto y fondo para cumplir con los estándares AA y AAA de WebAIM.</p>
+
+            <h3>4. Cómo activar las hojas de estilo accesibles</h3>
+            <p>Este sitio web ofrece varios estilos alternativos pensados para adaptarse a las necesidades visuales de cada usuario:</p>
+            <ul>
+                <li><strong>Estilo predeterminado:</strong> Diseño base con tonos suaves.</li>
+                <li><strong>Modo noche:</strong> Paleta oscura de bajo brillo para reducir la fatiga visual.</li>
+                <li><strong>Alto contraste:</strong> Combinación de colores de máximo contraste y enlaces subrayados.</li>
+                <li><strong>Texto grande:</strong> Aumento del cuerpo de texto y uso de la tipografía <em>Atkinson Hyperlegible</em>, diseñada por el Braille Institute para personas con baja visión y dislexia.</li>
+                <li><strong>Alto contraste y texto grande:</strong> Combinación de ambas mejoras.</li>
+            </ul>
+            <p>Para seleccionar cualquiera de estos estilos desde el navegador <strong>Mozilla Firefox</strong>, pulsa la tecla <code>Alt</code> para mostrar la barra de menú superior, selecciona <strong>Ver &rarr; Estilo de página</strong> y haz clic en el estilo que desees aplicar.</p>
+
+            <h3>5. Otras características implementadas</h3>
+            <ul>
+                <li><strong>Formularios accesibles:</strong> Todos los controles disponen de etiquetas <code>&lt;label&gt;</code> asociadas y agrupaciones <code>&lt;fieldset&gt;</code> con su correspondiente <code>&lt;legend&gt;</code>.</li>
+                <li><strong>Tablas accesibles:</strong> Uso de <code>&lt;caption&gt;</code> y encabezados con atributo <code>scope</code>.</li>
+                <li><strong>Versión impresa automática:</strong> Hoja de estilo adaptada para papel A4 que se activa automáticamente al imprimir la página.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 PI - Pisos &amp; Inmuebles | <a href="accesibilidad.html">Accesibilidad</a></p>
+    </footer>
+</body>
+</html>

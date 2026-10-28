@@ -1,0 +1,47 @@
+/* -------- Página de error 404 -------- */
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-family: var(--fuente-titulo);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--color-texto);
+}
+
+main p {
+    color: var(--color-texto-suave);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+main a {
+    display: inline-block;
+    background-color: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    padding: 10px 22px;
+    border-radius: var(--radio);
+    text-decoration: none;
+    font-family: var(--fuente);
+    font-weight: bold;
+    font-size: 1rem;
+    transition: opacity var(--transicion);
+}
+
+main a:hover {
+    opacity: 0.85;
+}

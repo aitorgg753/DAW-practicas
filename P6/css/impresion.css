@@ -1,0 +1,158 @@
+@page {
+    size: A4;
+    margin: 2cm;
+}
+
+body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.5;
+
+    *{
+        font-family: inherit !important;
+    }
+}
+
+nav, #iniSes, #formBusqueda, button, main > a[href="mensaje.html"], #subBusqueda {
+    display: none !important;
+}
+
+header {
+    border-bottom: 2pt solid #000000;
+    padding: 0 0 10pt 0;
+    margin-bottom: 15pt;
+}
+
+main, main section, .tarjeta {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 0 15pt 0 !important;
+    color: #000000 !important;
+}
+
+h1, h2, h3, p, li, th, td {
+    color: #000000 !important;
+    orphans: 3;
+    widows: 3;
+}
+
+h1, h2, h3 {
+    font-style: italic;
+    font-weight: bold;
+}
+
+h1 { font-size: 20pt; }
+h2 { font-size: 16pt; page-break-after: avoid; }
+h3 { font-size: 14pt; page-break-after: avoid; }
+
+article.tarjeta, img, table, tr {
+    page-break-inside: avoid;
+}
+
+input[type="text"], input[type = "email"], input[type = "number"], input[type = "color"], input[type = "date"], input[type = "tel"], select, fieldset, textarea {
+    border: 2px solid black !important;
+    border-radius: 0px !important;
+    background-color: #FFFFFF !important;
+}
+
+main img {
+    max-width: 8cm !important;
+    height: auto !important;
+    border: 1pt solid #000000 !important;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse !important; 
+    border: 2px solid black !important;
+    margin: 15pt 0;
+    background-color: #FFFFFF;
+}
+
+th, td {
+    border:2px solid #000000 !important;
+    padding: 6pt;
+    text-align: left;
+    background-color: #FFFFFF !important;
+}
+
+footer {
+    background: transparent !important;
+    border-top: 1pt solid #000000;
+    margin-top: 20px;
+    padding-top: 10x;
+    font-size: 10px;
+}
+
+.tarjeta, a {
+    display: block !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 20pt !important;
+}
+
+.tarjeta {
+    background-color: lightgray !important;
+    text-align: center;
+    border-radius: 0px;
+    padding: 10px !important;
+    width: 600px !important;
+    text-decoration: none !important;
+
+}
+
+.tarjeta img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 10x !important;
+
+    border-radius: 0px;
+    border: 2px solid black !important;
+}
+
+#anuncios {
+    display: block !important;
+
+    h2 {
+        page-break-before: avoid !important;
+    }
+}
+
+#anuncioPlaceholder {
+    padding: 10px !important;
+    background-color: lightgray !important;
+    h2, p {
+        text-align: center !important;
+    }
+    img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-radius: 0px;
+        border: 2px solid black !important;
+    }
+}
+
+#resBusqueda {
+    article {
+        border: 2px solid black;
+        background-color: #FFFFFF;
+        border-radius: 0px;
+
+        img {
+            border: 2px solid black;
+            border-radius: 0px;
+        }
+
+        p {
+            text-decoration: none !important;
+            font-size: 12px !important;
+        }
+    }
+}
