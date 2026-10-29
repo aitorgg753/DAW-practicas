@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    //---------------- Variables para la tabla -----------------
+
     const formularioTitulo = document.querySelector("h3");
     const seccion = document.querySelector("section");
 
@@ -7,12 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btnCostes.id = "btnCostes"
     btnCostes.textContent = "Mostrar posibles costes";
 
-    // 3. Creamos la tabla y la ocultamos por defecto
     const tablaCostes = document.createElement("table");
     tablaCostes.style.display = "none";
 
-    // --- CONSTRUIMOS EL THEAD (Encabezados) ---
-    // Fila 1 de encabezados (Blanco y negro / Color)
     const tr1 = document.createElement("tr");
     
     const thVacio = document.createElement("th");
@@ -31,6 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tablaCostes.appendChild(tr1);
 
+//---------------- Variables para el formulario -----------------
+
+const texto_adicional = document.getElementById("texto_adicional");
+const nombre = document.getElementById("nombre");
+const email = document.getElementById("email");
+const calle = document.getElementById("calle");
+const numero = document.getElementById("numero");
+const cp = document.getElementById("cp");
+const color_portada = document.getElementById("color_portada");
+const copias = document.getElementById("copias");
+
+/*-----------------------------------------------------------
+CREACIÓN DE LA TABLA
+-----------------------------------------------------------*/
+
     // Fila 2 de encabezados (Páginas, fotos, resoluciones)
     const tr2 = document.createElement("tr");
     const titulosColumnas = ["Número de páginas", "Número de fotos", "150-300 dpi", "450-900 dpi", "150-300 dpi", "450-900 dpi"];
@@ -41,13 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     tablaCostes.appendChild(tr2);
 
-    // --- CONSTRUIMOS EL TBODY (Filas de datos) ---
     for (let pag = 1; pag <= 15; pag++) {
         const tr = document.createElement("tr");
         const fotos = pag * 3; // 3 fotos por página
 
-        // Calcular el coste de las páginas en bloque (estilo factura del agua)
-        let costeBasePaginas = 10; // 10€ de procesamiento y envío
+        let costeBasePaginas = 10;
         for (let i = 1; i <= pag; i++) {
             if (i < 5) {
                 costeBasePaginas += 2.0; // Menos de 5 páginas
@@ -59,12 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Calculamos los 4 escenarios de impresión
-        const costeBN_Baja = costeBasePaginas; // BN (0€) + Baja res (0€)
-        const costeBN_Alta = costeBasePaginas + (fotos * 0.2); // BN (0€) + Alta res (0.2€ x foto)
-        const costeColor_Baja = costeBasePaginas + (fotos * 0.5); // Color (0.5€ x foto) + Baja res (0€)
-        const costeColor_Alta = costeBasePaginas + (fotos * 0.5) + (fotos * 0.2); // Color (0.5€) + Alta res (0.2€)
+        const costeBN_Baja = costeBasePaginas;
+        const costeBN_Alta = costeBasePaginas + (fotos * 0.2); 
+        const costeColor_Baja = costeBasePaginas + (fotos * 0.5);
+        const costeColor_Alta = costeBasePaginas + (fotos * 0.5) + (fotos * 0.2);
 
-        // Preparamos los datos de la fila formateando los euros
+        // Formateamos los euros
         const datosFila = [
             pag,
             fotos,
@@ -74,18 +87,15 @@ document.addEventListener("DOMContentLoaded", () => {
             formatearEuro(costeColor_Alta)
         ];
 
-        // Rellenamos los <td> de la fila
         for (let dato of datosFila) {
             const td = document.createElement("td");
             td.textContent = dato;
             tr.appendChild(td);
         }
-        
-        // Añadimos la fila a la tabla
         tablaCostes.appendChild(tr);
     }
 
-    // 4. Lógica del botón (mostrar / ocultar usando style.display)
+    //  Lógica del botón mostrar / ocultar
     btnCostes.addEventListener("click", () => {
         if (tablaCostes.style.display === "none") {
             tablaCostes.style.display = "table";
@@ -96,12 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 5. Inyectamos el botón y la tabla en el DOM antes del H3
     seccion.insertBefore(btnCostes, formularioTitulo);
     seccion.insertBefore(tablaCostes, formularioTitulo);
 });
 
-// Función de ayuda para formatear a "XX,XX €"
+// Función para formatear los euros (XX,XX €)
 function formatearEuro(numero) {
     return numero.toFixed(2).replace('.', ',') + " €";
 }
+
+
+/*-----------------------------------------------------------
+RESTRICCIONES  DEL FORMULARIO
+-----------------------------------------------------------*/
+
