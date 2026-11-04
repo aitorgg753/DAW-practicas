@@ -1,0 +1,76 @@
+/* -------- Respuesta / confirmación de solicitud de folleto -------- */
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+main section {
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 580px;
+}
+
+main section h2 {
+    margin-top: 0;
+    color: var(--color-exito);
+}
+
+main section p {
+    color: var(--color-texto-suave);
+    margin-bottom: 16px;
+}
+
+main section ul {
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+main section ul li {
+    color: var(--color-texto);
+    font-size: 0.95rem;
+}
+
+main section p strong {
+    color: var(--color-texto);
+    font-size: 1rem;
+}
+
+main section a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: var(--color-btn-bg);
+    color: var(--color-btn-text);
+    padding: 8px 18px;
+    border-radius: var(--radio);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--fuente);
+    font-size: 0.95rem;
+    transition: opacity var(--transicion);
+}
+
+main section a:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 560px) {
+    main section {
+        padding: 20px 14px;
+    }
+}

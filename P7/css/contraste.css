@@ -1,0 +1,35 @@
+:root {
+    --color-fondo: #000000;
+    --color-superficie: #000000;
+    --color-texto: #FFFFFF;
+    --color-texto-suave: #01ff38;
+    --color-borde-input: #FFFFFF;
+    --color-borde: #FFFFFF;
+    --color-btn-bg: #01ff38;
+    --color-btn-text: #000000;
+    --sombra: none;
+}
+
+header, footer, .tarjeta, main section, form, table, th, td, fieldset {
+    background-color: #000000 ;
+    color: #FFFFFF ;
+    border: 2px solid #FFFFFF ;
+}
+
+a {
+    color: #01ff38 ;
+    text-decoration: underline ;
+    font-weight: bold;
+}
+
+a:hover, a:focus, button:hover, button:focus {
+    background-color: #FFFFFF !important;
+    color: #000000 ;
+    outline: 3px solid #01ff38 ;
+}
+
+input, select, textarea {
+    background-color: #000000 ;
+    color: #FFFFFF ;
+    border: 2px solid #01ff38 ;
+}
