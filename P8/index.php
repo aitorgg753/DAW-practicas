@@ -1,4 +1,17 @@
-<?php session_start(); ?>
+<?php session_start();
+    $mensajeError = "";
+    $usuPrevio = "";
+
+    if (isset($_SESSION['_flash_error'])) {
+        $mensajeError = $_SESSION['_flash_error'];
+        unset($_SESSION['_flash_error']);
+    }
+
+    if (isset($_SESSION['_flash_nomUsu'])) {
+        $usuPrevio = $_SESSION['_flash_nomUsu'];
+        unset($_SESSION['_flash_nomUsu']);
+    }
+?>
 
 <!DOCTYPE html>
 <html lang = "es">
@@ -23,6 +36,9 @@
             <form id = "iniSes" action = "control_acceso.php" method = "post" novalidate>
                 <h2 class = "subtitulo">Iniciar sesión</h2>
                 <p class = "info-obligatorio">Los campos marcados con (*) son obligatorios.</p>
+                <?php if (!empty($mensajeError)) {
+                    echo "<p style = "color: red; font-weight: bold;" >";
+                } ?>
 
                 <label for = "nomUsu">Nombre de usuario (*)</label>
                 <small class = "texto-ayuda">Introduce tu nombre de usuario.</small>
