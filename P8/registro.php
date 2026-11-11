@@ -17,7 +17,10 @@
             <h2>Formulario de registro</h2>
             <p class="info-obligatorio">Los campos marcados con (*) son obligatorios.</p>
 
-            <form id="formRegistro" action="respuesta-registro.php" method="post" novalidate>
+            <form id="formRegistro" action="control_acceso.php" method="post" novalidate>
+
+                <!-- Campo oculto para indicar que es un registro (Para que control_acceso.php sepa qué func ejecutar) -->
+                <input type="hidden" name="redirigir" value="registro">
 
                 <!-- Nombre de usuario -->
                 <label for="nombre">Nombre de usuario (*):</label>

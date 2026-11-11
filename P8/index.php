@@ -21,7 +21,6 @@
         <link rel = "stylesheet" href = "css/global.css">
         <link rel = "stylesheet" href = "css/index.css">
         <?php include_once("inc/css.inc.php") ?>
-        <!-- <script src="js/index.js"></script> -->
     </head>
 
     <body>
@@ -33,12 +32,17 @@
                 <input type="text" placeholder="Ciudad, zona, código postal" class="borde" name = "filtroBusqueda">
                 <button type ="submit">Buscar</button>
             </form>
+
             <form id = "iniSes" action = "control_acceso.php" method = "post" novalidate>
+                <!-- Campo oculto para indicar que es un registro (Para que control_acceso.php sepa qué func ejecutar) -->    
+                <input type = "hidden" name = "redirigir" value = "index">
+                
                 <h2 class = "subtitulo">Iniciar sesión</h2>
                 <p class = "info-obligatorio">Los campos marcados con (*) son obligatorios.</p>
                 <?php if (!empty($mensajeError)) {
-                    echo "<p style = "color: red; font-weight: bold;" >";
-                } ?>
+                    echo '<p style = "color: red; font-weight: bold;">' . $mensajeError . '</p>';
+                } 
+                ?>
 
                 <label for = "nomUsu">Nombre de usuario (*)</label>
                 <small class = "texto-ayuda">Introduce tu nombre de usuario.</small>
