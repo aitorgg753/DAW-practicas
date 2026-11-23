@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        article {
+            padding: 10px;
+            h4{
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+
