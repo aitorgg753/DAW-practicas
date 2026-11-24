@@ -16,6 +16,7 @@ if ($redirigir === 'registro') {
 // COMPROBAR LOGIN DE USUARIO
 function comprobarSes()
 {
+    $link = mysqli_connect('localhost', 'root', '', 'daw');
     global $usuarios;
 
     $nomUsu = isset($_POST['nomUsu']) ? trim($_POST['nomUsu']) : '';
@@ -28,7 +29,11 @@ function comprobarSes()
         exit;
     }
 
-    if (!isset($usuarios[$nomUsu]) || $usuarios[$nomUsu]['pwd'] !== $pwd) {
+    $peticion = mysqli_query($link, "SELECT u.*, e.Fichero AS EstiloFichero FROM usuarios u LEFT JOIN
+     estilos e ON u.Estilo = e.IdEstilo WHERE NomUsuario = '$nomUsu'");
+    $respuesta = mysqli_fetch_assoc($peticion);
+
+    if (empty($respuesta) || $respuesta['Clave'] !== $pwd) {
         flash_guardar('error_login', 'El usuario o la contraseña son incorrectos.');
         flash_guardar('nomUsu_previo', $nomUsu);
         redirigir('index.php');
@@ -36,9 +41,9 @@ function comprobarSes()
     }
 
     session_regenerate_id(true);
-    $_SESSION['usuario_logueado'] = $nomUsu;
-    $_SESSION['estilo_css'] = $usuarios[$nomUsu]['estilo'];
-    $_SESSION['nombre'] = $usuarios[$nomUsu]['nombre'];
+    $_SESSION['usuario_logueado'] = $respuesta['NomUsuario'];
+    $_SESSION['estilo_css'] = $respuesta['EstiloFichero'];
+    $_SESSION['nombre'] = $respuesta['NomUsuario'];
 
     if (isset($_POST['recordarme']) && ($_POST['recordarme'] === '1' || $_POST['recordarme'] === 'on')) {
         recordar_guardar_usuario($nomUsu);

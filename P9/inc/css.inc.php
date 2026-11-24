@@ -1,9 +1,9 @@
 <?php
 // CARGAR ESTILO ASIGNADO A USUARIO
 if (isset($_SESSION['estilo_css']) && $_SESSION['estilo_css'] !== '') {
-    $archivoCss = obtener_estilo_css_valido($_SESSION['estilo_css']);
+    $archivoCss = $_SESSION['estilo_css'];
     if ($archivoCss !== '') {
-        echo '<link rel="stylesheet" href="css/' . e($archivoCss) . '">';
+        echo '<link rel="stylesheet" href="'. e($archivoCss) . '">';
     }
 }
 ?>
