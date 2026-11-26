@@ -1,5 +1,5 @@
 ﻿<?php
-// CONTROL DE ACCESO
+session_start();
 require_once(__DIR__ . '/inc/inicio_sesion.php');
 comprobar_acceso();
 ?>
@@ -17,22 +17,28 @@ comprobar_acceso();
         <main>
         <section id = "resBusqueda">
             <h2>Mis anuncios</h2>
-            <a href = "verAnuncio.php?id=3">
-                <article>
-                    <h3>Pisillo en Alcorcón</h3>
-                    <img src="img/pisoAlcorcon.webp" alt="Piso en Alcorcón" width="400" height="300">
-                    <p>Madrid</p>
-                    <p>España</p>
-                    <p>80000 €</p>
-                </article>
-                <article>
-                    <h3>Bungalow en Alicante</h3>
-                    <img src="img/bungalowAlicante.jpg" alt="Bungalow en Alicante" width="400" height="300">
-                    <p>Alicante</p>
-                    <p>España</p>
-                    <p>210000 €</p>
-                </article>
-            </a>
+            <?php
+                $link = mysqli_connect('localhost', 'root', '', 'daw');
+
+                $peticion = mysqli_query($link, "SELECT a.*, p.NomPais as NomPais FROM anuncios a
+                INNER JOIN usuarios u ON a.Usuario = u.IdUsuario LEFT JOIN paises p ON a.Pais = p.IdPais
+                WHERE u.NomUsuario = '". $_SESSION['usuario_logueado'] ."'");
+
+                $n_anuncios = 0;
+            
+                while ($fila = mysqli_fetch_assoc($peticion)) {
+                    $n_anuncios++;
+                    echo '<a href = "verAnuncio.php?id=' . $fila['IdAnuncio'] . '">';    
+                    echo "<article>";
+                    echo "<h3>" . $fila['Titulo'] . "</h3>";
+                    echo '<img src="./' . $fila['FPrincipal'] . '" alt="' . $fila['Alternativo'] . '" width="400" height="300">';
+                    echo "<p>" . $fila['Ciudad'] . "</p>";
+                    echo "<p>" . $fila['NomPais'] . "</p>";
+                    echo "<p>" . $fila['Precio'] . " €</p>";
+                    echo "</article>";
+                    echo "</a>";
+                }
+            ?>
         </section>
     </main>
     <?php include_once("inc/footer.inc.php"); ?>
