@@ -6,9 +6,7 @@ error_reporting(E_ALL);
 date_default_timezone_set('Europe/Madrid');
 
 // CARGAR ARCHIVOS DE FUNCIONES
-if (file_exists(__DIR__ . '/funciones.php')) {
-    require_once(__DIR__ . '/funciones.php');
-}
+require_once(__DIR__ . '/funciones.php');
 require_once(__DIR__ . '/funciones_sesion.php');
 
 // INICIAR SESION SEGURA
@@ -29,3 +27,4 @@ if (!isset($_SESSION['usuario_logueado'])) {
     recordar_restaurar_sesion();
 }
 
+?>

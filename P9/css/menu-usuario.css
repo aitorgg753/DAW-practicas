@@ -48,7 +48,25 @@ main section ul li a {
     border: 1px solid var(--color-borde);
 }
 
-main section ul li a:hover {
+main section ul li a:hover, main section ul li button:hover {
     background-color: var(--color-borde);
-    padding-left: 20px;
+    padding-left: 20px !important;
+}
+
+main section ul li button {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    font-size: 1rem !important;
+    cursor: pointer;
+    padding: 10px 14px;
+    border-radius: var(--radio);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color var(--transicion), padding-left var(--transicion);
+    border: 1px solid var(--color-borde);
 }
