@@ -35,6 +35,7 @@ session_write_close();
                 <li><a href="crearAnuncio.php">Crear anuncio nuevo</a></li>
                 <li><a href="mensajes.php">Mis mensajes</a></li>
                 <li><a href="folleto.php">Solicitar folleto publicitario</a></li>
+                <li><a href="estilos.php">Estilos</a></li>
                 <li><a href="logout.php">Cerrar sesión</a></li>
             </ul>
         </section>

@@ -355,19 +355,3 @@ function panel_anuncios_borrar_cookie()
     unset($_COOKIE['ultimos_anuncios']);
     unset($_COOKIE['historial_anuncios']);
 }
-
-// OBTENER ESTILO CSS VALIDO
-function obtener_estilo_css_valido($estilo)
-{
-    $permitidos = [
-        'noche.css',
-        'grande.css',
-        'contraste.css',
-        'contrasteGrande.css'
-    ];
-    if (in_array($estilo, $permitidos, true)) {
-        return $estilo;
-    }
-    return '';
-}
-
