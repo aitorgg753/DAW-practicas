@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2026 a las 19:26:30
+-- Tiempo de generación: 26-11-2026 a las 20:34:56
 -- Versión del servidor: 10.11.16-MariaDB
 -- Versión de PHP: 8.3.36
 
@@ -32,7 +32,7 @@ CREATE TABLE `anuncios` (
   `TAnuncio` tinyint(4) NOT NULL,
   `TVivienda` tinyint(4) NOT NULL,
   `FPrincipal` text NOT NULL,
-  `Alternativo` int(255) NOT NULL,
+  `Alternativo` varchar(255) NOT NULL,
   `Titulo` text NOT NULL,
   `Precio` float NOT NULL,
   `Texto` text NOT NULL,
@@ -47,6 +47,13 @@ CREATE TABLE `anuncios` (
   `Usuario` int(11) NOT NULL
 ) ;
 
+--
+-- Volcado de datos para la tabla `anuncios`
+--
+
+INSERT INTO `anuncios` (`IdAnuncio`, `TAnuncio`, `TVivienda`, `FPrincipal`, `Alternativo`, `Titulo`, `Precio`, `Texto`, `Ciudad`, `Pais`, `Superficie`, `NHabitaciones`, `NBanyos`, `Planta`, `Anyo`, `FRegistro`, `Usuario`) VALUES
+(1, 1, 1, 'img/foto1.jpg', 'Piso en Alicante', 'Piso en Alicante', 225000, 'Amplio piso en Alicante con buena iluminación natural, terraza y todos los servicios cercanos.', 'Alicante', 1, 95, 3, 2, 3, 2008, '2026-11-25 18:53:06', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +66,17 @@ CREATE TABLE `estilos` (
   `Descripcion` text NOT NULL,
   `Fichero` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `estilos`
+--
+
+INSERT INTO `estilos` (`IdEstilo`, `Nombre`, `Descripcion`, `Fichero`) VALUES
+(1, 'Modo oscuro', 'Colores oscuros y reducción de brillo', './css/noche.css'),
+(2, 'Por defecto', 'Modo por defecto de la página', './css/global.css'),
+(3, 'Texto grande', 'El texto de la página es más grande', './css/grande.css'),
+(4, 'Alto contraste', 'Colores que contrastan entre ellos para facilitar la correcta visualización de la página', './css/contraste.css'),
+(5, 'Contraste grande', 'Combinación de los Estilos \"Alto contraste\" y \"Grande\"', './css/contrasteGrande.css');
 
 -- --------------------------------------------------------
 
@@ -101,6 +119,14 @@ CREATE TABLE `paises` (
   `NomPais` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `paises`
+--
+
+INSERT INTO `paises` (`IdPais`, `NomPais`) VALUES
+(1, 'España'),
+(2, 'Mongolia');
+
 -- --------------------------------------------------------
 
 --
@@ -136,6 +162,14 @@ CREATE TABLE `tiposanuncios` (
   `NomTAnuncio` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tiposanuncios`
+--
+
+INSERT INTO `tiposanuncios` (`IdTAnuncio`, `NomTAnuncio`) VALUES
+(1, 'Venta'),
+(2, 'Alquiler');
+
 -- --------------------------------------------------------
 
 --
@@ -158,6 +192,15 @@ CREATE TABLE `tiposviviendas` (
   `NomTVivienda` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tiposviviendas`
+--
+
+INSERT INTO `tiposviviendas` (`IdTVivienda`, `NomTVivienda`) VALUES
+(1, 'Piso'),
+(2, 'Apartamento'),
+(3, 'Bungalow');
+
 -- --------------------------------------------------------
 
 --
@@ -177,6 +220,13 @@ CREATE TABLE `usuarios` (
   `FRegistro` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Estilo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`IdUsuario`, `NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`, `Estilo`) VALUES
+(3, 'aitor', 'aitor', 'aitor@gmail.com', 0, '2006-09-08', 'Alicante', 1, '', '2026-11-24 14:18:33', 2);
 
 --
 -- Índices para tablas volcadas
@@ -269,7 +319,7 @@ ALTER TABLE `anuncios`
 -- AUTO_INCREMENT de la tabla `estilos`
 --
 ALTER TABLE `estilos`
-  MODIFY `IdEstilo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdEstilo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `fotos`
@@ -287,7 +337,7 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `paises`
 --
 ALTER TABLE `paises`
-  MODIFY `IdPais` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitudes`
@@ -299,7 +349,7 @@ ALTER TABLE `solicitudes`
 -- AUTO_INCREMENT de la tabla `tiposanuncios`
 --
 ALTER TABLE `tiposanuncios`
-  MODIFY `IdTAnuncio` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdTAnuncio` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tiposmensajes`
@@ -311,13 +361,13 @@ ALTER TABLE `tiposmensajes`
 -- AUTO_INCREMENT de la tabla `tiposviviendas`
 --
 ALTER TABLE `tiposviviendas`
-  MODIFY `IdTVivienda` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdTVivienda` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
