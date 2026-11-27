@@ -3,32 +3,28 @@
 require_once(__DIR__ . '/inc/inicio_sesion.php');
 comprobar_acceso();
 
-if (file_exists('datos_anuncios.php')) {
-    require_once('datos_anuncios.php');
-}
-
 $idParam = isset($_GET['id']) ? trim($_GET['id']) : '';
-$anuncio = null;
+$link = mysqli_connect('localhost', 'root', '', 'daw');
+
+$peticion = mysqli_query($link, "SELECT a.*, u.NomUsuario as Usuario, p.NomPais as Pais, tv.NomTVivienda as tipo_vivienda, ta.NomTAnuncio as tipo_anuncio 
+FROM anuncios a LEFT JOIN tiposviviendas tv ON a.TVivienda = tv.IdTVivienda 
+LEFT JOIN tiposanuncios ta ON a.TAnuncio = ta.IdTAnuncio 
+LEFT JOIN usuarios u ON a.Usuario = u.IdUsuario
+LEFT JOIN paises p ON a.Pais = p.IdPais
+WHERE IdAnuncio = '" . $idParam . "'");
+
+$anuncio = mysqli_fetch_assoc($peticion);
 $error = '';
+
 
 if ($idParam === '') {
     $error = 'No se ha proporcionado un identificador de anuncio.';
-} elseif (!is_numeric($idParam)) {
-    $error = 'El identificador de anuncio debe ser un número entero válido.';
-} else {
-    $idNum = (int)$idParam;
-    if ($idNum <= 0) {
-        $error = 'El identificador de anuncio debe ser mayor que cero.';
-    } else {
-        $anuncio = isset($anuncios[$idNum]) ? $anuncios[$idNum] : null;
-
-        if ($anuncio === null) {
-            $error = 'El anuncio solicitado no existe en el sistema.';
-        }
-    }
 }
-
-$title = $anuncio !== null ? 'Ver anuncio: ' . $anuncio['titulo'] : 'Anuncio no encontrado';
+if ($anuncio === null) {
+    $error = 'El anuncio solicitado no existe en el sistema.';
+}
+    
+$title = $anuncio !== null ? 'Ver anuncio: ' . $anuncio['Titulo'] : 'Anuncio no encontrado';
 $cssAdicional = 'anuncio.css';
 $esPrivada = true;
 
@@ -48,36 +44,38 @@ if (file_exists('inc/inicio.php')) {
     </section>
 <?php else: ?>
     <section id="anuncioPlaceholder">
-        <h2><?= e($anuncio['titulo']) ?></h2>
+        <h2><?= e($anuncio['Titulo']) ?></h2>
 
         <p><strong>Tipo de anuncio:</strong> <?= e($anuncio['tipo_anuncio']) ?></p>
         <p><strong>Tipo de vivienda:</strong> <?= e($anuncio['tipo_vivienda']) ?></p>
 
-        <img src="<?= e($anuncio['foto_principal']) ?>" alt="<?= e($anuncio['alt_foto_principal']) ?>" style="width: 400px; height: 300px;">
+        <img src="<?= e($anuncio['FPrincipal']) ?>" alt="<?= e($anuncio['Alternativo']) ?>" style="width: 400px; height: 300px;">
 
-        <p><?= e($anuncio['texto']) ?></p>
-        <p><strong>Fecha de publicación:</strong> <?= e($anuncio['fecha']) ?></p>
-        <p><strong>Ubicación:</strong> <?= e($anuncio['ciudad']) ?>, <?= e($anuncio['pais']) ?></p>
-        <p><strong>Precio:</strong> <?= e($anuncio['precio']) ?></p>
-        <p><strong>Publicado por el usuario:</strong> <?= e($anuncio['usuario']) ?></p>
+        <p><?= e($anuncio['Texto']) ?></p>
+        <p><strong>Fecha de publicación:</strong> <?= e($anuncio['FRegistro']) ?></p>
+        <p><strong>Ubicación:</strong> <?= e($anuncio['Ciudad']) ?>, <?= e($anuncio['Pais']) ?></p>
+        <p><strong>Precio:</strong> <?= e($anuncio['Precio']) ?> €</p>
+        <p><strong>Publicado por el usuario:</strong> <?= e($anuncio['Usuario']) ?></p>
 
         <h3>Características de la vivienda</h3>
         <ul>
-            <li><strong>Superficie:</strong> <?= e($anuncio['caracteristicas']['superficie']) ?></li>
-            <li><strong>Habitaciones:</strong> <?= e($anuncio['caracteristicas']['habitaciones']) ?></li>
-            <li><strong>Baños:</strong> <?= e($anuncio['caracteristicas']['banos']) ?></li>
-            <li><strong>Planta:</strong> <?= e($anuncio['caracteristicas']['planta']) ?></li>
-            <li><strong>Año de construcción:</strong> <?= e($anuncio['caracteristicas']['ano_construccion']) ?></li>
+            <li><strong>Superficie:</strong> <?= e($anuncio['Superficie']) ?></li>
+            <li><strong>Habitaciones:</strong> <?= e($anuncio['NHabitaciones']) ?></li>
+            <li><strong>Baños:</strong> <?= e($anuncio['NBanyos']) ?></li>
+            <li><strong>Planta:</strong> <?= e($anuncio['Planta']) ?></li>
+            <li><strong>Año de construcción:</strong> <?= e($anuncio['Anyo']) ?></li>
         </ul>
-
+        <?php
+            $peticion2 = mysqli_query($link, "SELECT Foto, Alternativo FROM fotos WHERE Anuncio = '" . $idParam . "'");
+        ?>
         <h3>Miniaturas de fotos</h3>
-        <?php foreach ($anuncio['fotos'] as $foto): ?>
-            <img src="<?= e($foto['src']) ?>" alt="<?= e($foto['alt']) ?>" style="width: 200px; height: 150px; display: inline-block; margin-right: 10px;">
-        <?php endforeach; ?>
+        <?php while ($foto = mysqli_fetch_assoc($peticion2)): ?>
+            <img src="<?= e($foto['Foto']) ?>" alt="<?= e($foto['Alternativo']) ?>" style="width: 200px; height: 150px; display: inline-block; margin-right: 10px;">
+        <?php endwhile; ?>
     </section>
 
     <p style="text-align: center; margin-top: 15px;">
-        <a href="anadirFoto.php?id=<?= (int)$anuncio['id'] ?>" style="display: inline-block; background-color: var(--color-btn-bg); color: var(--color-btn-text); padding: 10px 20px; border-radius: var(--radio); text-decoration: none; font-weight: bold;">Añadir foto a este anuncio</a>
+        <a href="anadirFoto.php?id=<?= (int)$anuncio['IdAnuncio'] ?>" style="display: inline-block; background-color: var(--color-btn-bg); color: var(--color-btn-text); padding: 10px 20px; border-radius: var(--radio); text-decoration: none; font-weight: bold;">Añadir foto a este anuncio</a>
     </p>
 
     <p style="text-align: center; margin-top: 10px;">
