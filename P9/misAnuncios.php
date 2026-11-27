@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 require_once(__DIR__ . '/inc/inicio_sesion.php');
 comprobar_acceso();
@@ -24,10 +24,10 @@ comprobar_acceso();
                 INNER JOIN usuarios u ON a.Usuario = u.IdUsuario LEFT JOIN paises p ON a.Pais = p.IdPais
                 WHERE u.NomUsuario = '". $_SESSION['usuario_logueado'] ."'");
 
-                $n_anuncios = 0;
+                $n_anuncios = mysqli_num_rows($peticion);
+                echo "<p>Total de anuncios: " . $n_anuncios . "</p>";
             
                 while ($fila = mysqli_fetch_assoc($peticion)) {
-                    $n_anuncios++;
                     echo '<a href = "verAnuncio.php?id=' . $fila['IdAnuncio'] . '">';    
                     echo "<article>";
                     echo "<h3>" . $fila['Titulo'] . "</h3>";
